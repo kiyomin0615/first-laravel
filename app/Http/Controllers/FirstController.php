@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 class FirstController extends Controller
 {
     public function homePage() {
-        return '<h1>Home</h1><a href="/about">About 페이지 보기</a>';
+        return view('homepage');
     }
 
     public function aboutPage() {
-        return '<h1>About</h1><a href="/">Home 페이지로 돌아가기</a>';
+        $name = '구교민';
+        $age = 30;
+        $stackList = ['C', 'C#', 'JS', 'TS', 'PHP', 'Express', 'Laravel', 'SQL', 'MongoDB', 'Linux', 'Git', 'Docker', 'Networking'];
+        return view('aboutpage', ['name' => $name, 'age' => $age, 'stackList' => $stackList]);
     }
 }
