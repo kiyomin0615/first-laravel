@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FirstController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/", function () {
-    return '<h1>Home</h1><a href="/about">About 페이지 보기</a>';
-});
-
-Route::get("/about", function () {
-    return '<h1>About</h1><a href="/">Home 페이지로 돌아가기</a>';
-});
+Route::get("/", [FirstController::class, 'homePage']);
+Route::get("/about", [FirstController::class, 'aboutPage']);
