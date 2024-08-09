@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class FirstController extends Controller
 {
-    public function homePage() {
+    public function homePage()
+    {
         return view('homepage');
     }
 
-    public function aboutPage() {
+    public function aboutPage()
+    {
         return view('single-post');
     }
 }

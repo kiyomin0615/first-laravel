@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,7 @@ use App\Http\Controllers\FirstController;
 |
 */
 
-Route::get("/", [FirstController::class, 'homePage']);
-Route::get("/about", [FirstController::class, 'aboutPage']);
+Route::get('/', [FirstController::class, 'homePage']);
+Route::get('/about', [FirstController::class, 'aboutPage']);
+
+Route::post('/register', [UserController::class, 'register']);
